@@ -9,12 +9,14 @@ const boxesEl = document.querySelector("#boxes");
 
 btnCreate.addEventListener("click", createBoxes);
 controlsEl.addEventListener("change", onChangeColor);
-
+btnDestroy.addEventListener("click", destroyBoxes);
 function createBoxes(amount) {
+  let sizeBox = 20;
   for (let i = 0; i < amount; i += 1) {
+    sizeBox += 10;
     boxesEl.insertAdjacentHTML(
       "beforeend",
-      `<div style="background-color:${getRandomHexColor()};width: 30px;height: 30px">1</div>`
+      `<div style="background-color:${getRandomHexColor()};width: ${sizeBox}px;height: ${sizeBox}px"></div>`
     );
   }
 }
@@ -24,3 +26,7 @@ function onChangeColor(e) {
   return createBoxes(numberEl);
 }
 // console.log(createBoxes(5));
+
+function destroyBoxes() {
+  boxesEl.innerHTML = "";
+}
