@@ -10,6 +10,7 @@ console.log(btn);
 btn.addEventListener("click", onChangeColor);
 
 function onChangeColor() {
-  bodyEl.style.backgroundColor = getRandomHexColor();
-  color.innerHTML = getRandomHexColor();
+  const colorRandom = getRandomHexColor();
+  bodyEl.style.backgroundColor = colorRandom;
+  color.innerHTML = colorRandom;
 }

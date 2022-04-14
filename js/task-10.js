@@ -8,9 +8,10 @@ const controlsEl = document.querySelector("#controls > input");
 const boxesEl = document.querySelector("#boxes");
 
 btnCreate.addEventListener("click", createBoxes);
-controlsEl.addEventListener("change", onChangeColor);
 btnDestroy.addEventListener("click", destroyBoxes);
+
 function createBoxes(amount) {
+  amount = controlsEl.value;
   let sizeBox = 20;
   for (let i = 0; i < amount; i += 1) {
     sizeBox += 10;
@@ -19,14 +20,10 @@ function createBoxes(amount) {
       `<div style="background-color:${getRandomHexColor()};width: ${sizeBox}px;height: ${sizeBox}px"></div>`
     );
   }
+  controlsEl.value = "";
 }
-
-function onChangeColor(e) {
-  const numberEl = e.currentTarget.value;
-  return createBoxes(numberEl);
-}
-// console.log(createBoxes(5));
 
 function destroyBoxes() {
   boxesEl.innerHTML = "";
+  controlsEl.value = "";
 }

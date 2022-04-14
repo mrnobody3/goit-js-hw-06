@@ -15,25 +15,9 @@ const images = [
 const ulGallery = document.querySelector(".gallery");
 ulGallery.classList.add("flex__container");
 
-const imgArr = images.map((item) =>
-  ulGallery.insertAdjacentHTML(
-    "afterbegin",
+const imgArr = images.map(
+  (item) =>
     `<li class="flex__container--item"><img class="flex__container--img" src=${item.url} alt=${item.alt}></li>`
-  )
 );
-// console.log(imgArr);
-// ulGallery.append(...imgArr);
 
-// {
-//   const
-// const liEl = document.createElement("li");
-// liEl.classList.add("flex__container--item");
-// const imgEl = document.createElement("img");
-// imgEl.src = item.url;
-// imgEl.alt = item.alt;
-// imgEl.width = 300;
-// imgEl.classList.add("flex__container--img");
-// liEl.append(imgEl);
-// return liEl;
-//   return
-// }
+ulGallery.insertAdjacentHTML("afterbegin", imgArr);
