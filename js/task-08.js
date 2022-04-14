@@ -11,11 +11,12 @@ function onFormSubmit(event) {
   const formData = new FormData(event.currentTarget);
   // console.log(formData);
   formData.forEach((value, name) => {
-    if (value && name) {
-      return console.log(name, value);
+    if (!value || !name) {
+      return alert("Give me your email and password");
     }
-    return alert("Give me your email and password");
+    return console.log(name, value);
   });
   event.currentTarget.elements.email.value = "";
   event.currentTarget.elements.password.value = "";
 }
+// trim()
