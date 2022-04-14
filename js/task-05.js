@@ -10,5 +10,3 @@ function onInputChange(event) {
     return (outputText.innerHTML = "Anonymous");
   }
 }
-console.log(inputText.textContent);
-console.log(outputText.textContent);

@@ -18,8 +18,8 @@ const buttonDecrement = document.querySelector(
 const buttonIncrement = document.querySelector(
   "button[data-action='increment']"
 );
-console.log(buttonIncrement);
-console.log(buttonDecrement);
+// console.log(buttonIncrement);
+// console.log(buttonDecrement);
 const valueEl = document.querySelector("#value");
 
 buttonDecrement.addEventListener("click", () => {
