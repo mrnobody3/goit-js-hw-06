@@ -16,7 +16,8 @@ function onFormSubmit(event) {
     }
     return console.log(name, value);
   });
-  event.currentTarget.elements.email.value = "";
-  event.currentTarget.elements.password.value = "";
+  form.reset();
+  // event.currentTarget.elements.email.value = "";
+  // event.currentTarget.elements.password.value = "";
 }
 // trim()
